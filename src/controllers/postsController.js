@@ -43,7 +43,8 @@ export async function uploadImagem(req, res) {
 
 export async function atualizarNovoPost(req, res) {
   const id = req.params.id;
-  const urlImagem = `http://localhost:3000/${id}.png`;
+  const baseUrl = process.env.BASE_URL || "http://localhost:3000";
+  const urlImagem = `${baseUrl}/${id}.png`;
   try {
     const imgBuffer = fs.readFileSync(`uploads/${id}.png`);
     const descricao = await gerarDescricaoComGemini(imgBuffer);
