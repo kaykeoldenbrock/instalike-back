@@ -9,7 +9,7 @@ import {
 } from "../controllers/postsController.js";
 
 const corsOptions = {
-  origin: "http://localhost:8000",
+  origin: ["http://localhost:8000", "https://instalike-frontend.vercel.app"],
   optionsSuccessStatus: 200,
 };
 
